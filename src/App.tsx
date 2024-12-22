@@ -49,7 +49,7 @@ function App() {
       image: "images/projects/login-system-min.png"
     },
     {
-      title: "SpesaSmart v1.2.2",
+      title: "SpesaSmart v1.2.3",
       description: "Applicazione mobile Android per la gestione delle spese",
       tech: ["React Native"],
       github: "https://github.com/alexis-82/SpesaSmart",
