@@ -35,7 +35,7 @@ function App() {
 
   const featuredProjects = [
     {
-      title: "FlowFiles v1.0.0",
+      title: "FlowFiles v1.2.0",
       description: "File Browser per la gestione dei file da web",
       tech: ["Express", "Node.js", "React", "TypeScript", "Docker"],
       github: "https://github.com/alexis-82/flowfiles.git",
