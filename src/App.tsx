@@ -219,7 +219,7 @@ function App() {
 
       {/* Footer */}
       <div className="container mx-auto px-4 py-8 text-center text-gray-400 text-sm">
-        2024 Alessio Abrugiati | Powered by Caffeine and Code
+        © {new Date().getFullYear()} Alessio Abrugiati | Powered by Caffeine and Code
       </div>
 
       <button 
