@@ -35,21 +35,21 @@ function App() {
 
   const featuredProjects = [
     {
-      title: "FlowFiles v1.2.0",
+      title: "FlowFiles",
       description: "File Browser per la gestione dei file da web",
       tech: ["Express", "Node.js", "React", "TypeScript", "Docker"],
       github: "https://github.com/alexis-82/flowfiles.git",
       image: "images/projects/flowfiles.png"
     },
     {
-      title: "Login System v1.0.0",
+      title: "Login System",
       description: "Sistema di Login e Registrazione",
       tech: ["Node.js", "Express", "React", "JWT", "Docker"],
       github: "https://github.com/alexis-82/login-system",
       image: "images/projects/login-system-min.png"
     },
     {
-      title: "SpesaSmart v1.3.0",
+      title: "SpesaSmart",
       description: "Applicazione mobile Android per la gestione delle spese",
       tech: ["React Native"],
       github: "https://github.com/alexis-82/SpesaSmart",
@@ -59,7 +59,7 @@ function App() {
 
   const additionalProjects = [
     {
-      title: "suiteAV v3.0.0",
+      title: "suiteAV",
       description: "Programma Downloader per Windows10/11 e Linux",
       tech: ["Python", "yt-dlp", "Shell", "Bash"],
       github: "https://github.com/alexis-82/suiteAV-win",
@@ -76,7 +76,7 @@ function App() {
   ];
 
   const allProjects = [...featuredProjects, ...additionalProjects];
-  const displayedProjects = showAllProjects ? allProjects : featuredProjects;
+  // const displayedProjects = showAllProjects ? allProjects : featuredProjects;
 
   const contacts = [
     { Icon: Github, href: "https://github.com/alexis-82", label: "GitHub Profile" },
