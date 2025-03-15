@@ -22,7 +22,7 @@ export default function ProjectCard({
   onImageClick 
 }: ProjectCardProps) {
   return (
-    <div className="group bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+    <div className="group bg-gray-900 p-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 flex flex-col h-full">
       {image && (
         <div 
           className="mb-4 overflow-hidden rounded-lg relative group/image"
@@ -40,7 +40,7 @@ export default function ProjectCard({
         </div>
       )}
       <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-gray-400 mb-4">{description}</p>
+      <p className="text-gray-400 mb-4 flex-grow">{description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {tech.map((t) => (
           <span
@@ -51,7 +51,7 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 mt-auto">
         {github && (
           <a
             href={github}

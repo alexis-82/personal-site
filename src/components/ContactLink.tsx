@@ -1,5 +1,4 @@
 import { LucideIcon } from 'lucide-react';
-
 interface ContactLinkProps {
   href: string;
   Icon: LucideIcon;

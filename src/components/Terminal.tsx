@@ -63,7 +63,7 @@ export default function Terminal() {
     <div className="bg-gray-900/90 backdrop-blur-sm rounded-lg p-4 font-mono text-sm w-full max-w-2xl border border-purple-900/20">
       <div className="flex items-center gap-2">
         <div className="flex items-center gap-2 px-0">
-          <span className="text-gray-400 text-sm">alessio@developer:~$ sh script.sh</span>
+          <span className="text-gray-400 text-sm">alessio@developer:~$ ./script.sh</span>
         </div>
       </div>
       

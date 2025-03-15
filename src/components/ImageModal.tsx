@@ -46,8 +46,10 @@ export default function ImageModal({ isOpen, onClose, imageUrl, alt }: ImageModa
       <img
         src={imageUrl}
         alt={alt}
-        className="max-w-[95vw] max-h-[95vh] object-contain transform"
+        draggable="false"
+        className="max-w-[95vw] max-h-[95vh] object-contain transform select-none"
         onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.preventDefault()}
         style={{
           animation: 'zoomIn 0.3s ease-in-out'
         }}

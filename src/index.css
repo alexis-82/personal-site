@@ -6,6 +6,32 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Mantiene solo lo scrolling fluido senza l'effetto snap */
+html {
+  scroll-behavior: smooth;
+  /* scroll-snap-type: y mandatory; rimozione dell'effetto snap */
+}
+
+/* Rimozione dell'aggancio delle sezioni durante lo scroll */
+/* #home, #about, #projects, #contact, 
+section[id], div[id]:not(#root) {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+} */
+
+/* Nasconde la barra di scorrimento ma mantiene la funzionalità di scroll */
+.hide-scrollbar {
+  /* Per Firefox */
+  scrollbar-width: none;
+  /* Per IE e Edge */
+  -ms-overflow-style: none;
+}
+
+/* Per Chrome, Safari e Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -26,8 +52,23 @@
   }
 }
 
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
 }
 
 .back-to-top {
