@@ -5,6 +5,7 @@ import cors from 'cors';
 import compression from 'compression';
 import contactRoutes from './routes/contact.js';
 import visitsRoutes from './routes/visits.js';
+import authRoutes from './routes/auth.js';
 import { visitsTracker } from './middlewares/visitsTracker.js';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
@@ -45,6 +46,7 @@ if (isDistAvailable) {
 }
 
 // Routes
+app.use('/api/auth', authRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/visits', visitsRoutes);
 
@@ -67,4 +69,4 @@ app.listen(PORT, () => {
   }
 });
 
-export default app; 
+export default app;

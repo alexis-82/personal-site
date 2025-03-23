@@ -8,28 +8,29 @@ import {
   getGeoVisitsStats,
   generateTestData
 } from '../controllers/visitsController.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
 // Rotta per ottenere tutte le statistiche
-router.get('/', getVisitsStats);
+router.get('/', authMiddleware, getVisitsStats);
 
 // Rotta per ottenere le statistiche di base
-router.get('/basic', getBasicVisitsStats);
+router.get('/basic', authMiddleware, getBasicVisitsStats);
 
 // Rotta per ottenere le statistiche delle pagine
-router.get('/pages', getPageVisitsStats);
+router.get('/pages', authMiddleware, getPageVisitsStats);
 
 // Rotta per ottenere le statistiche temporali
-router.get('/time', getTimeVisitsStats);
+router.get('/time', authMiddleware, getTimeVisitsStats);
 
 // Rotta per ottenere le statistiche dei browser e OS
-router.get('/tech', getTechVisitsStats);
+router.get('/tech', authMiddleware, getTechVisitsStats);
 
 // Rotta per ottenere le statistiche geografiche
-router.get('/geo', getGeoVisitsStats);
+router.get('/geo', authMiddleware, getGeoVisitsStats);
 
 // Rotta per generare dati di test
-router.post('/generate-test-data', generateTestData);
+router.post('/generate-test-data', authMiddleware, generateTestData);
 
-export default router; 
+export default router;
