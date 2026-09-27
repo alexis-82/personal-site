@@ -1,22 +1,33 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        ink: '#0B0F1E',
+        paper: '#EAF2F1',
+        magenta: '#FF2E88',
+        cyan: '#00D4FF',
+        lime: '#B4FF39',
+        tangerine: '#FF6B1A',
+        violet: '#6B4EFF',
+      },
+      fontFamily: {
+        mono: ['"Space Mono"', 'ui-monospace', 'Menlo', 'monospace'],
+        pixel: ['"VT323"', 'monospace'],
+      },
+      boxShadow: {
+        sticker: '6px 6px 0 #0B0F1E',
+        'sticker-sm': '4px 4px 0 #0B0F1E',
+        'sticker-lg': '8px 8px 0 #0B0F1E',
+      },
       animation: {
-        'fade-in': 'fadeIn 0.3s ease-out forwards',
-        'pulse': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'fade-in-modal': 'fade-in 0.3s ease-out',
+        blink: 'blink 1.05s steps(2) infinite',
+        fill: 'fill 2.1s ease-out forwards',
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(5px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'fade-in': {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' }
-        }
+        blink: { '50%': { opacity: '0' } },
+        fill: { to: { width: '100%' } },
       },
     },
   },

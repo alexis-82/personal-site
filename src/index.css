@@ -1,103 +1,80 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-/* Mantiene solo lo scrolling fluido senza l'effetto snap */
-html {
-  scroll-behavior: smooth;
-  /* scroll-snap-type: y mandatory; rimozione dell'effetto snap */
+@keyframes fill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
-/* Rimozione dell'aggancio delle sezioni durante lo scroll */
-/* #home, #about, #projects, #contact, 
-section[id], div[id]:not(#root) {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-} */
-
-/* Nasconde la barra di scorrimento ma mantiene la funzionalità di scroll */
-.hide-scrollbar {
-  /* Per Firefox */
-  scrollbar-width: none;
-  /* Per IE e Edge */
-  -ms-overflow-style: none;
-}
-
-/* Per Chrome, Safari e Opera */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  body {
+    @apply font-mono bg-paper text-ink;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #ff6b1a;
+    outline-offset: 3px;
   }
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
+@layer components {
+  .section-pad {
+    @apply py-14 px-6 border-b-[3px] border-ink;
   }
-  to {
-    opacity: 0;
+  .wrap {
+    @apply max-w-[1100px] mx-auto;
   }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
+  .prompt {
+    @apply text-sm font-bold mb-2.5 opacity-75;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+  .h2 {
+    @apply font-bold leading-[1.05] mb-6 tracking-tight;
+    font-size: clamp(28px, 4vw, 44px);
   }
-}
 
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease-out forwards;
-}
+  /* boot bar (single load animation) */
+  .boot-bar {
+    @apply inline-block align-[-1px] relative overflow-hidden;
+    width: 180px;
+    height: 12px;
+    background: #1c2137;
+    border: 1px solid #b4ff39;
+  }
+  .boot-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #b4ff39;
+    animation: fill 2.1s ease-out forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .boot-bar::after {
+      animation: none;
+      width: 100%;
+    }
+    .caret {
+      animation: none !important;
+    }
+  }
 
-.animate-slide-up {
-  animation: slideUp 0.4s ease-out forwards;
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(to right, #4F46E5, #7C3AED);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 1000;
-  border: none;
-  font-weight: 500;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.back-to-top.visible {
-  opacity: 1;
-}
-
-.back-to-top:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  background: linear-gradient(to right, #6366F1, #8B5CF6);
-}
-
-body {
-  @apply bg-gray-950;
+  .caret {
+    @apply inline-block align-[-2px];
+    width: 0.55ch;
+    height: 1em;
+    animation: blink 1.05s steps(2) infinite;
+  }
 }
