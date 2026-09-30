@@ -17,19 +17,19 @@ export default function About() {
         <div className="grid gap-8 grid-cols-1 lg:grid-cols-[2fr_1fr]">
           <div className="space-y-3.5 max-w-[64ch]">
             <p>
-              Sviluppo web full stack — soprattutto React sul front, Node.js e
-              Python sul back — e faccio anche il sysadmin Linux quando serve.
-              Mi piacciono le cose scritte bene, che partono al primo colpo, e
-              che si possono capire leggendo il codice.
+              Sistemista Linux di lungo corso, oggi orientato a DevOps e Cloud engineering.
+              Sviluppo full-stack quando serve — React e TypeScript sul front, Node.js e Python sul back — ma il mio terreno preferito è
+              l'infrastruttura: container, Kubernetes, VPS, reverse proxy, TLS che non scade, servizi che restano in piedi.
             </p>
             <p>
-              Contribuisco all'open source e credo che condividere strumenti
-              sia il modo più efficiente di imparare. Quando non sto compilando
-              qualcosa, ricreo scenari in Home Lab con macchine virtuali.
+              Mi piacciono le cose scritte bene, che partono al primo colpo, e che si possono capire leggendo il codice.
+              Contribuisco all'open source e credo che condividere strumenti sia il modo più efficiente di imparare.
+              Quando non sto compilando qualcosa, ricreo scenari in home lab — cluster Kubernetes su VMware, VPS self-hosted, tutto
+              quello che serve per capire davvero come funzionano le cose sotto il cofano.
             </p>
             <p>
-              Sto cercando progetti che abbiano un obiettivo chiaro e utenti
-              veri. Se hai qualcosa da costruire, scrivimi due righe.
+              Sto cercando progetti con un obiettivo chiaro e utenti veri.
+              Se hai qualcosa da costruire — o da tenere in piedi — scrivimi due righe.
             </p>
           </div>
 

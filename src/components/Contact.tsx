@@ -1,5 +1,5 @@
 const LINKS = [
-  { label: 'email', k: 'giobbia82@gmail.com', href: 'mailto:giobbia82@gmail.com' },
+  { label: 'email', k: 'alessioabrugiati@gmail.com', href: 'mailto:alessioabrugiati@gmail.com' },
   { label: 'github', k: '@alexis-82', href: 'https://github.com/alexis-82' },
   { label: 'linkedin', k: '/in/alessio-abrugiati', href: 'https://www.linkedin.com/in/alessio-abrugiati/' },
   { label: 'sito legacy', k: 'alexis82.it', href: 'https://www.alexis82.it' },
